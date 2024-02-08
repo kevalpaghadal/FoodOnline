@@ -41,12 +41,12 @@ class usermanger(BaseUserManager):
         return user
  
 
-class user(AbstractBaseUser):
-    RESTAURANT = 1  
+class User(AbstractBaseUser):
+    VENDOR = 1  
     CUSTOMER = 2
 
     ROLE_CHOICE = (
-        (RESTAURANT,  'Restaurant'),
+        (VENDOR,  'Vendor'),
         (CUSTOMER,  'Customer'),
     )
 
@@ -82,7 +82,7 @@ class user(AbstractBaseUser):
         return True
 
 class userprofile(models.Model):
-    user = OneToOneField(user , on_delete = models.CASCADE, blank = True, null = True)
+    user = OneToOneField(User , on_delete = models.CASCADE, blank = True, null = True)
     profile_picture = models.ImageField(upload_to='users/profile_pictures' , blank=True, null=True)
     cover_photo = models.ImageField(upload_to='users/cover_photos' , blank=True, null=True)
     address_line_1 = models.CharField(max_length=100, blank=True, null=True)

@@ -1,13 +1,13 @@
 from typing import Any
 from django import forms
-from .models import user
+from .models import User
 
 class userform(forms.ModelForm):
     # add custom fields
     password = forms.CharField(widget=forms.PasswordInput())
     confirm_password = forms.CharField(widget=forms.PasswordInput())
     class Meta:
-        model = user
+        model = User
         fields  = ['first_name' , 'last_name', 'username' , 'email' , 'password']
 
     # compare password and confirm password

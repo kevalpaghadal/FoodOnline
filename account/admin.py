@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import user , userprofile
+from .models import User , userprofile
 from django.contrib.auth.admin import UserAdmin
 # Register your models here.
 
@@ -11,7 +11,7 @@ class CusotmUserAdmin(UserAdmin):
     list_filter =()
     fieldsets = ()
 
-admin.site.register(user , CusotmUserAdmin)
+admin.site.register(User , CusotmUserAdmin)
 
 # register userprofile
 admin.site.register(userprofile)
